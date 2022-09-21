@@ -41,23 +41,23 @@ export default function AboutLogoList(props: AboutLogoListProps) {
   )
 }
 
-export const query = graphql`
-  fragment AboutLogoListContent on ContentfulComponentPageSection {
-    id
-    heading
-    links {
-      id
-      href
-      text
-    }
-    logos {
-      id
-      alt
-      image {
-        id
-        gatsbyImageData
-        alt
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   fragment AboutLogoListContent on ContentfulComponentPageSection {
+//     id
+//     heading
+//     links {
+//       id
+//       href
+//       text
+//     }
+//     logos {
+//       id
+//       alt
+//       image {
+//         id
+//         gatsbyImageData
+//         alt
+//       }
+//     }
+//   }
+// `

@@ -34,15 +34,15 @@ export default function AboutHero(props: AboutHeroProps) {
   )
 }
 
-export const query = graphql`
-  fragment AboutHeroContent on ContentfulComponentHeroBanner {
-    id
-    heading
-    text
-    image {
-      id
-      gatsbyImageData
-      alt
-    }
-  }
-`
+// export const query = graphql`
+//   fragment AboutHeroContent on ContentfulComponentHeroBanner {
+//     id
+//     heading
+//     text
+//     image {
+//       id
+//       gatsbyImageData
+//       alt
+//     }
+//   }
+// `

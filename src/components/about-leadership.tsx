@@ -72,20 +72,20 @@ export default function AboutLeadership(props: AboutLeadershipProps) {
   )
 }
 
-export const query = graphql`
-  fragment AboutLeadershipContent on ContentfulComponentPageSection {
-    id
-    kicker
-    heading
-    subhead
-    content {
-      id
-      name
-      jobTitle
-      image {
-        gatsbyImageData
-        alt
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   fragment AboutLeadershipContent on ContentfulComponentPageSection {
+//     id
+//     kicker
+//     heading
+//     subhead
+//     content {
+//       id
+//       name
+//       jobTitle
+//       image {
+//         gatsbyImageData
+//         alt
+//       }
+//     }
+//   }
+// `

@@ -36,13 +36,13 @@ export default function AboutStatList(props: AboutStatListProps) {
   )
 }
 
-export const query = graphql`
-  fragment AboutStatListContent on ContentfulComponentPageSection {
-    id
-    content {
-      id
-      value
-      label
-    }
-  }
-`
+// export const query = graphql`
+//   fragment AboutStatListContent on ContentfulComponentPageSection {
+//     id
+//     content {
+//       id
+//       value
+//       label
+//     }
+//   }
+// `
