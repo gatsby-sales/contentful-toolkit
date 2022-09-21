@@ -3,14 +3,14 @@ import { graphql } from "gatsby"
 import { Container, Box, Kicker, Heading, Text } from "./ui"
 import Feature from "./feature"
 
-export interface FeatureListProps {
-  kicker?: string
-  heading: string
-  text?: string
-  content: Queries.FeatureContentFragment[]
-}
+// export interface FeatureListProps {
+//   kicker?: string
+//   heading: string
+//   text?: string
+//   content: Queries.FeatureContentFragment[]
+// }
 
-export default function FeatureList(props: FeatureListProps) {
+export default function FeatureList(props: Queries.FeatureListContentFragment) {
   return (
     <Container width="fullbleed">
       <Box background="muted" radius="large">
@@ -19,9 +19,9 @@ export default function FeatureList(props: FeatureListProps) {
             {props.kicker && <Kicker>{props.kicker}</Kicker>}
             {props.heading}
           </Heading>
-          {props.text && <Text>{props.text}</Text>}
+          {props.subhead && <Text>{props.subhead}</Text>}
         </Box>
-        {props.content.map((feature, i) => (
+        {props.content.map((feature: Queries.FeatureContentFragment, i) => (
           <Feature key={feature.id} {...feature} flip={Boolean(i % 2)} />
         ))}
       </Box>

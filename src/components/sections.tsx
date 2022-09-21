@@ -1,15 +1,15 @@
 import { graphql } from "gatsby"
-import { HeroProps } from "./hero"
-import { FeatureListProps } from "./feature-list"
-import { BenefitListProps } from "./benefit-list"
-import { TestimonialListProps } from "./testimonial-list"
-import { CtaProps } from "./cta"
+// import { HeroProps } from "./hero"
+// import { FeatureListProps } from "./feature-list"
+// import { BenefitListProps } from "./benefit-list"
+// import { TestimonialListProps } from "./testimonial-list"
+// import { CtaProps } from "./cta"
 // import { ProductListProps } from "./product-list"
 
-import { AboutHeroProps } from "./about-hero"
-import { AboutStatListProps } from "./about-stat-list"
-import { AboutLeadershipProps } from "./about-leadership"
-import { AboutLogoListProps } from "./about-logo-list"
+// import { AboutHeroProps } from "./about-hero"
+// import { AboutStatListProps } from "./about-stat-list"
+// import { AboutLeadershipProps } from "./about-leadership"
+// import { AboutLogoListProps } from "./about-logo-list"
 
 export { default as HeroBanner } from "./hero"
 export { default as FeatureList } from "./feature-list"
@@ -25,18 +25,14 @@ export { default as AboutLeadership } from "./about-leadership"
 export { default as AboutLogoList } from "./about-logo-list"
 
 export type SectionProps =
-  | HeroProps
-  | FeatureListProps
+  | Queries.HeroBannerContentFragment
+  | Queries.FeatureListContentFragment
   | Queries.LogoListContentFragment
-  | BenefitListProps
-  | TestimonialListProps
+  | Queries.BenefitListContentFragment
+  | Queries.TestimonialListContentFragment
   | Queries.StatListContentFragment
-  | CtaProps
+  | Queries.CtaContentFragment
   | Queries.ProductListContentFragment
-  | AboutHeroProps
-  | AboutStatListProps
-  | AboutLeadershipProps
-  | AboutLogoListProps
 
 type SectionTypes =
   | "HeroBanner"
@@ -58,13 +54,13 @@ type WithSectionType<S = SectionTypes, P = SectionProps> = {
 } & P
 
 export type HomepageBlock =
-  | WithSectionType<"HeroBanner", HeroProps>
-  | WithSectionType<"FeatureList", FeatureListProps>
+  | WithSectionType<"HeroBanner", Queries.HeroBannerContentFragment>
+  | WithSectionType<"FeatureList", Queries.FeatureContentFragment>
   | WithSectionType<"LogoList", Queries.LogoListContentFragment>
-  | WithSectionType<"BenefitList", BenefitListProps>
-  | WithSectionType<"TestimonialList", TestimonialListProps>
+  | WithSectionType<"BenefitList", Queries.BenefitListContentFragment>
+  | WithSectionType<"TestimonialList", Queries.TestimonialListContentFragment>
   | WithSectionType<"StatList", Queries.StatListContentFragment>
-  | WithSectionType<"Cta", CtaProps>
+  | WithSectionType<"Cta", Queries.CtaContentFragment>
   | WithSectionType<"ProductList", Queries.ProductListContentFragment>
 
 export const query = graphql`

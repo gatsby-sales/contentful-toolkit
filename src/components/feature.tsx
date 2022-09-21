@@ -10,8 +10,6 @@ import {
   Kicker,
   Text,
   ButtonList,
-  HomepageImage,
-  HomepageLink,
 } from "./ui"
 
 interface FeatureProps {

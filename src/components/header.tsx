@@ -40,8 +40,10 @@ interface HeaderData {
   layout: {
     header: {
       id: string
-      navItems: ContentfulComponentLink[] | ContentfulComponentList[]
-      cta: ContentfulComponentLink
+      navItems:
+        | Queries.ContentfulComponentLink[]
+        | Queries.ContentfulComponentList[]
+      cta: Queries.ContentfulComponentLink
     }
   }
 }
@@ -149,7 +151,11 @@ export default function Header() {
                 ))}
             </FlexList>
           </nav>
-          <div>{cta && <Button to={cta.href}>{cta.text}</Button>}</div>
+          <div>
+            {cta && (
+              <Button to={cta.target?.slug || cta.url}>{cta.text}</Button>
+            )}
+          </div>
         </Flex>
       </Container>
       <Container className={mobileHeaderNavWrapper[isOpen ? "open" : "closed"]}>
@@ -169,7 +175,10 @@ export default function Header() {
             <Space />
             <div>
               {cta && (
-                <Button to={cta.href} variant={isOpen ? "reversed" : "primary"}>
+                <Button
+                  to={cta.target?.slug || cta.url}
+                  variant={isOpen ? "reversed" : "primary"}
+                >
                   {cta.text}
                 </Button>
               )}

@@ -10,17 +10,16 @@ import {
   Box,
   Kicker,
   Space,
-  HomepageImage,
 } from "./ui"
 
-interface AboutProfileProps {
-  id: string
-  image?: HomepageImage
-  name?: string
-  jobTitle?: string
-}
+// interface AboutProfileProps {
+//   id: string
+//   image?: HomepageImage
+//   name?: string
+//   jobTitle?: string
+// }
 
-function AboutProfile(props: AboutProfileProps) {
+function AboutProfile(props) {
   return (
     <Box width="third" padding={4} center>
       {props.image && (
@@ -46,14 +45,14 @@ function AboutProfile(props: AboutProfileProps) {
   )
 }
 
-export interface AboutLeadershipProps {
-  kicker?: string
-  heading?: string
-  subhead?: string
-  content: AboutProfileProps[]
-}
+// export interface AboutLeadershipProps {
+//   kicker?: string
+//   heading?: string
+//   subhead?: string
+//   content: AboutProfileProps[]
+// }
 
-export default function AboutLeadership(props: AboutLeadershipProps) {
+export default function AboutLeadership(props) {
   return (
     <Section>
       <Container width="tight">

@@ -13,8 +13,6 @@ import {
   Icon,
   ButtonList,
   Nudge,
-  HomepageImage,
-  HomepageLink,
 } from "./ui"
 
 // interface StatProps {
@@ -42,6 +40,14 @@ function Stat(props) {
 // }
 
 export default function StatList(props: Queries.StatListContentFragment) {
+  const stats = props.content.filter(
+    (item: Queries.ContentfulEntry) =>
+      item.internal.type === "ContentfulTopicStatistics"
+  )[0]
+  const link: Queries.ContentfulComponentLink | {} = props.content.filter(
+    (item: Queries.ContentfulEntry) =>
+      item.internal.type === "ContentfulComponentLink"
+  )[0]
   return (
     <Container width="fullbleed">
       <Section padding={5} radius="large" background="primary">
@@ -57,15 +63,15 @@ export default function StatList(props: Queries.StatListContentFragment) {
               {props.kicker && <Kicker>{props.kicker}</Kicker>}
               {props.heading}
             </Heading>
-            {props.text && <Text variant="lead">{props.text}</Text>}
+            {props.subhead && <Text variant="lead">{props.subhead}</Text>}
             <FlexList wrap gap={4}>
-              {props.content.map((stat) => (
+              {stats.statistics.map((stat) => (
                 <li key={stat.id}>
                   <Stat {...stat} />
                 </li>
               ))}
             </FlexList>
-            <ButtonList links={props.links} reversed />
+            <ButtonList links={[link]} reversed />
           </Box>
           <Box width="half">
             {props.backgroundImage && (
@@ -109,6 +115,9 @@ export const query = graphql`
           key
           value
         }
+        internal {
+          type
+        }
       }
       ... on ContentfulComponentLink {
         id
@@ -117,6 +126,9 @@ export const query = graphql`
         }
         text
         url
+        internal {
+          type
+        }
       }
     }
   }

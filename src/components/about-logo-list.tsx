@@ -1,23 +1,15 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import {
-  Container,
-  Heading,
-  FlexList,
-  LinkList,
-  Section,
-  Box,
-  HomepageLink,
-} from "./ui"
-import { LogoItem, LogoItemProps } from "./logo-list"
+import { Container, Heading, FlexList, LinkList, Section, Box } from "./ui"
+import { LogoItem } from "./logo-list"
 
-export interface AboutLogoListProps {
-  heading?: string
-  links: HomepageLink[]
-  logos: LogoItemProps[]
-}
+// export interface AboutLogoListProps {
+//   heading?: string
+//   links: HomepageLink[]
+//   logos: LogoItemProps[]
+// }
 
-export default function AboutLogoList(props: AboutLogoListProps) {
+export default function AboutLogoList(props) {
   return (
     <Section>
       <Container>

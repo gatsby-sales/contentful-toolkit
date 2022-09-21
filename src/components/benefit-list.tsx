@@ -9,15 +9,14 @@ import {
   Heading,
   Text,
   Space,
-  HomepageImage,
 } from "./ui"
 
-// interface BenefitProps {
-//   id: string
-//   image?: HomepageImage
-//   heading: string
-//   text: string
-// }
+interface BenefitProps {
+  id: string
+  icon?: Queries.ContentfulTopicMediaWrapper
+  heading: string
+  text: string
+}
 
 function Benefit(props: BenefitProps) {
   return (
@@ -48,11 +47,11 @@ export default function BenefitList(props: Queries.BenefitListContentFragment) {
       <Container>
         <Box center>
           {props.heading && <Heading>{props.heading}</Heading>}
-          {props.text && <Text variant="lead">{props.text}</Text>}
+          {props.subhead && <Text variant="lead">{props.subhead}</Text>}
         </Box>
         <Space size={3} />
         <FlexList gutter={3} variant="start" responsive wrap>
-          {props.content.map((benefit) => (
+          {props.content.map((benefit: BenefitProps) => (
             <Benefit key={benefit.id} {...benefit} />
           ))}
         </FlexList>

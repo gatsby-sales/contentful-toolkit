@@ -21,12 +21,14 @@ import {
 // }
 
 export default function HomepageCta(props: Queries.CtaContentFragment) {
-  const image = props.content.filter(
-    (item) => item.internal.type === "ContentfulTopicMediaWrapper"
+  const image: Queries.ContentfulTopicMediaWrapper = props.content.filter(
+    (item: Queries.ContentfulEntry) =>
+      item.internal.type === "ContentfulTopicMediaWrapper"
   )[0]
-  const links = props.content.filter(
-    (item) => item.internal.type === "ContentfulComponentList"
-  )[0].items
+  const links: Queries.ContentfulComponentList = props.content.filter(
+    (item: Queries.ContentfulEntry) =>
+      item.internal.type === "ContentfulComponentList"
+  )[0]
 
   return (
     <Container width="fullbleed">
@@ -38,7 +40,7 @@ export default function HomepageCta(props: Queries.CtaContentFragment) {
         <Text as="p" center variant="lead">
           {props.subhead}
         </Text>
-        <ButtonList links={links} variant="center" reversed />
+        <ButtonList links={links.items} variant="center" reversed />
         {image && (
           <Nudge left={5} right={5} bottom={5}>
             <GatsbyImage

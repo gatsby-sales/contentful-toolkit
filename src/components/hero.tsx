@@ -13,14 +13,14 @@ import {
   Text,
 } from "./ui"
 
-export interface HeroProps {
-  image?: ContentfulTopicMediaWrapper
-  kicker?: string
-  h1: string
-  subhead: string
-  text: string
-  links: ContentfulComponentLink[]
-}
+// export interface HeroProps {
+//   image?: ContentfulTopicMediaWrapper
+//   kicker?: string
+//   h1: string
+//   subhead: string
+//   text: string
+//   links: ContentfulComponentLink[]
+// }
 
 export default function Hero(props: Queries.HeroBannerContentFragment) {
   return (

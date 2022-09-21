@@ -20,7 +20,7 @@ import {
 //   source: string
 // }
 
-function Testimonial(props) {
+function Testimonial(props: Queries.ContentfulTopicTestimonial) {
   return (
     <Flex variant="start">
       {props.author.image && (
@@ -62,11 +62,18 @@ export default function TestimonialList(
           </Heading>
         </Box>
         <FlexList gutter={3} variant="start" responsive wrap>
-          {props.content[0].items.map((testimonial, index) => (
-            <Box as="li" key={testimonial.id + index} width="half" padding={3}>
-              <Testimonial {...testimonial} />
-            </Box>
-          ))}
+          {props.content[0].items.map(
+            (testimonial: Queries.ContentfulTopicTestimonial, index) => (
+              <Box
+                as="li"
+                key={testimonial.id + index}
+                width="half"
+                padding={3}
+              >
+                <Testimonial {...testimonial} />
+              </Box>
+            )
+          )}
         </FlexList>
       </Container>
     </Section>

@@ -11,8 +11,6 @@ import {
   Box,
   Icon,
   LinkList,
-  HomepageImage,
-  HomepageLink,
 } from "./ui"
 
 // interface ProductProps {
@@ -23,7 +21,7 @@ import {
 //   links: HomepageLink[]
 // }
 
-function Product(props) {
+function Product(props: Queries.ContentfulComponentCard) {
   return (
     <Box center>
       {props.icon && (
@@ -35,7 +33,7 @@ function Product(props) {
       )}
       <Subhead>{props.heading}</Subhead>
       <Text>{props.text}</Text>
-      <LinkList links={props.links} />
+      <LinkList links={[props.link]} />
     </Box>
   )
 }
@@ -56,10 +54,10 @@ export default function ProductList(props: Queries.ProductListContentFragment) {
             {props.kicker && <Kicker>{props.kicker}</Kicker>}
             {props.heading}
           </Heading>
-          {props.text && <Text>{props.text}</Text>}
+          {props.subhead && <Text>{props.subhead}</Text>}
         </Box>
         <FlexList gap={4} variant="responsive">
-          {props.content.map((product) => (
+          {props.content.map((product: Queries.ContentfulComponentCard) => (
             <li key={product.id}>
               <Product {...product} />
             </li>

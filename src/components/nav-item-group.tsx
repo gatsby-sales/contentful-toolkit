@@ -16,7 +16,9 @@ import { media } from "./ui.css"
 
 interface NavItemGroupProps {
   name: string
-  navItems: ContentfulComponentLink[] | ContentfulComponentLinkWDescription[]
+  navItems:
+    | Queries.ContentfulComponentLink[]
+    | Queries.ContentfulComponentLinkWDescription[]
 }
 
 export default function NavItemGroup({ name, navItems }: NavItemGroupProps) {

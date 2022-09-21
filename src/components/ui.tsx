@@ -261,7 +261,7 @@ export function Button({
 }
 
 interface ButtonListProps extends BaseProps {
-  links: HomepageLink[]
+  links: Queries.ContentfulComponentLink[]
   variant?: styles.FlexVariants
   reversed?: boolean
 }
@@ -282,7 +282,11 @@ export function ButtonList({
       {links &&
         links.map((link, i) => (
           <li key={link.id}>
-            <Button href={link.href} variant={getVariant(i)}>
+            <Button
+              href={link.url}
+              to={link.target?.slug}
+              variant={getVariant(i)}
+            >
               {link.text}
             </Button>
           </li>
@@ -296,7 +300,7 @@ export function CTALink(props) {
 }
 
 interface LinkListProps extends BaseProps {
-  links: HomepageLink[]
+  links: Queries.ContentfulComponentLink[]
 }
 
 export function LinkList({ links = [], ...props }: LinkListProps) {
@@ -305,7 +309,9 @@ export function LinkList({ links = [], ...props }: LinkListProps) {
       {links &&
         links.map((link, i) => (
           <li key={link.id}>
-            <CTALink href={link.href}>{link.text}</CTALink>
+            <CTALink href={link.url} to={link.target?.slug}>
+              {link.text}
+            </CTALink>
           </li>
         ))}
     </FlexList>
