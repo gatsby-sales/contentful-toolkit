@@ -50,7 +50,7 @@ interface HeaderData {
 
 export default function Header() {
   const data: HeaderData = useStaticQuery(graphql`
-    query {
+    query HeaderContent {
       layout: contentfulLayout {
         header {
           id

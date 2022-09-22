@@ -18,7 +18,6 @@ import {
   Text,
   IconLink,
   VisuallyHidden,
-  HomepageLink,
 } from "./ui"
 import BrandLogo from "./brand-logo"
 
@@ -73,7 +72,7 @@ interface FooterData {
   layout: {
     footer: {
       id: string
-      links: HomepageLink[]
+      links: Queries.ContentfulComponentLink[]
       meta: { id: string; href: string; text: string }[]
       copyright: string
       socialLinks: { id: string; service: string; username: string }[]
@@ -83,7 +82,7 @@ interface FooterData {
 
 export default function Footer() {
   const data: FooterData = useStaticQuery(graphql`
-    query {
+    query FooterContent {
       layout: contentfulLayout {
         footer {
           id
@@ -143,7 +142,9 @@ export default function Footer() {
             {links &&
               links.map((link) => (
                 <li key={link.id}>
-                  <NavLink to={link.href}>{link.text}</NavLink>
+                  <NavLink to={link.target?.slug} href={link.url}>
+                    {link.text}
+                  </NavLink>
                 </li>
               ))}
           </FlexList>

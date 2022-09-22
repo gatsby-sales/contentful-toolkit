@@ -52,6 +52,7 @@ function Testimonial(props: Queries.ContentfulTopicTestimonial) {
 export default function TestimonialList(
   props: Queries.TestimonialListContentFragment
 ) {
+  const testimonials = props.content[0].items
   return (
     <Section>
       <Container>
@@ -62,7 +63,7 @@ export default function TestimonialList(
           </Heading>
         </Box>
         <FlexList gutter={3} variant="start" responsive wrap>
-          {props.content[0].items.map(
+          {testimonials.map(
             (testimonial: Queries.ContentfulTopicTestimonial, index) => (
               <Box
                 as="li"

@@ -43,7 +43,7 @@ export default function StatList(props: Queries.StatListContentFragment) {
   const stats = props.content.filter(
     (item: Queries.ContentfulEntry) =>
       item.internal.type === "ContentfulTopicStatistics"
-  )[0]
+  )[0].statistics
   const link: Queries.ContentfulComponentLink | {} = props.content.filter(
     (item: Queries.ContentfulEntry) =>
       item.internal.type === "ContentfulComponentLink"
@@ -65,7 +65,7 @@ export default function StatList(props: Queries.StatListContentFragment) {
             </Heading>
             {props.subhead && <Text variant="lead">{props.subhead}</Text>}
             <FlexList wrap gap={4}>
-              {stats.statistics.map((stat) => (
+              {stats.map((stat) => (
                 <li key={stat.id}>
                   <Stat {...stat} />
                 </li>
@@ -112,7 +112,8 @@ export const query = graphql`
       ... on ContentfulTopicStatistics {
         id
         statistics {
-          key
+          id
+          label: key
           value
         }
         internal {

@@ -1,5 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
+import type { PageProps } from "gatsby"
 import Layout from "../components/layout"
 import * as sections from "../components/sections"
 import SEO from "../components/seo"
@@ -21,7 +22,7 @@ import Fallback from "../components/fallback"
 //   }
 // }
 
-export default function Page({ data }: Queries.PageContentQuery) {
+export default function Page({ data }: PageProps<Queries.PageContentQuery>) {
   const { page } = data
   return (
     <Layout {...page}>
@@ -36,7 +37,7 @@ export default function Page({ data }: Queries.PageContentQuery) {
     </Layout>
   )
 }
-export const Head = ({ data }: PageProps) => {
+export const Head = ({ data }: PageProps<Queries.PageContentQuery>) => {
   const { page } = data
   const { title, seo } = page
   const { description, ogImage } = seo

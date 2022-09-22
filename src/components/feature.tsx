@@ -52,6 +52,7 @@ export const query = graphql`
     heading
     text
     links {
+      id
       target {
         slug
       }
