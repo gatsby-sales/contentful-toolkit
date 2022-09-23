@@ -10,12 +10,12 @@ import * as styles from "./about-hero.css"
 //   image?: HomepageImage
 // }
 
-export default function AboutHero(props) {
+export default function AboutHero(props: Queries.HeroBannerContentFragment) {
   return (
     <Section>
       <Container>
         <SuperHeading className={styles.aboutHeroHeader}>
-          {props.heading}
+          {props.h1}
         </SuperHeading>
         {props.text && (
           <Text className={styles.aboutHeroText}>{props.text}</Text>
@@ -25,7 +25,7 @@ export default function AboutHero(props) {
         {props.image && (
           <GatsbyImage
             alt={props.image.alt}
-            image={getImage(props.image.gatsbyImageData)}
+            image={getImage(props.image.image.gatsbyImageData)}
             className={styles.aboutHeroImage}
           />
         )}

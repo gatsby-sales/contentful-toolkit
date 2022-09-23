@@ -52,7 +52,7 @@ function AboutProfile(props) {
 //   content: AboutProfileProps[]
 // }
 
-export default function AboutLeadership(props) {
+export default function LeadershipList(props) {
   return (
     <Section>
       <Container width="tight">
@@ -71,20 +71,30 @@ export default function AboutLeadership(props) {
   )
 }
 
-// export const query = graphql`
-//   fragment AboutLeadershipContent on ContentfulComponentPageSection {
-//     id
-//     kicker
-//     heading
-//     subhead
-//     content {
-//       id
-//       name
-//       jobTitle
-//       image {
-//         gatsbyImageData
-//         alt
-//       }
-//     }
-//   }
-// `
+export const query = graphql`
+  fragment LeadershipListContent on ContentfulComponentPageSection {
+    id
+    kicker
+    heading
+    subhead
+    content {
+      ... on ContentfulComponentList {
+        id
+        name
+        items {
+          ... on ContentfulTopicPerson {
+            id
+            name
+            jobTitle
+            image {
+              alt
+              image {
+                gatsbyImageData
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`

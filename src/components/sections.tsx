@@ -21,7 +21,7 @@ export { default as Cta } from "./cta"
 export { default as ProductList } from "./product-list"
 export { default as AboutHero } from "./about-hero"
 export { default as AboutStatList } from "./about-stat-list"
-export { default as AboutLeadership } from "./about-leadership"
+export { default as LeadershipList } from "./leadership-list"
 export { default as AboutLogoList } from "./about-logo-list"
 
 export type SectionProps =
@@ -33,6 +33,7 @@ export type SectionProps =
   | Queries.StatListContentFragment
   | Queries.CtaContentFragment
   | Queries.ProductListContentFragment
+  | Queries.LeadershipListContentFragment
 
 type SectionTypes =
   | "HeroBanner"
@@ -43,7 +44,7 @@ type SectionTypes =
   | "StatList"
   | "Cta"
   | "ProductList"
-  | "AboutHero"
+  | "LeadershipList"
   | "AboutStatList"
   | "AboutLeadership"
   | "AboutLogoList"
@@ -62,6 +63,7 @@ export type HomepageBlock =
   | WithSectionType<"StatList", Queries.StatListContentFragment>
   | WithSectionType<"Cta", Queries.CtaContentFragment>
   | WithSectionType<"ProductList", Queries.ProductListContentFragment>
+  | WithSectionType<"LeadershipList", Queries.LeadershipListContentFragment>
 
 export const query = graphql`
   fragment SectionsContent on ContentfulPageTypeLandingPage {
@@ -75,6 +77,7 @@ export const query = graphql`
       ...BenefitListContent
       ...StatListContent
       ...ProductListContent
+      ...LeadershipListContent
     }
   }
 `

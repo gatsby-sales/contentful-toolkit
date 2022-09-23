@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import { Space, Container, Section, FlexList, Text, Logo } from "./ui"
+import { Space, Container, Section, FlexList, Text, Logo, Heading } from "./ui"
 
 // export interface LogoItemProps {
 //   id: string
@@ -25,6 +25,8 @@ export default function LogoList(props: Queries.LogoListContentFragment) {
   return (
     <Section paddingY={4}>
       <Container width="narrow">
+        {props.heading && <Heading>{props.heading}</Heading>}
+
         {props.subhead && (
           <Text center variant="lead">
             {props.subhead}
@@ -50,6 +52,7 @@ export const query = graphql`
   fragment LogoListContent on ContentfulComponentPageSection {
     id
     sectionType
+    heading
     subhead
     logos: content {
       ... on ContentfulComponentList {

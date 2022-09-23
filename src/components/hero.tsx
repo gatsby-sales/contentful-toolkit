@@ -1,6 +1,7 @@
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as React from "react"
+import AboutHero from "./about-hero"
 import {
   Box,
   ButtonList,
@@ -23,6 +24,9 @@ import {
 // }
 
 export default function Hero(props: Queries.HeroBannerContentFragment) {
+  if (props.bannerType && props.bannerType === "Secondary") {
+    return <AboutHero {...props} />
+  }
   return (
     <Section>
       <Container>
@@ -53,6 +57,7 @@ export default function Hero(props: Queries.HeroBannerContentFragment) {
 export const query = graphql`
   fragment HeroBannerContent on ContentfulComponentHeroBanner {
     id
+    bannerType
     kicker
     h1: heading
     subhead

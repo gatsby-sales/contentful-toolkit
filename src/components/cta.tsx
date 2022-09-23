@@ -29,7 +29,6 @@ export default function HomepageCta(props: Queries.CtaContentFragment) {
     (item: Queries.ContentfulEntry) =>
       item.internal.type === "ContentfulComponentList"
   )[0]
-
   return (
     <Container width="fullbleed">
       <Section padding={5} radius="large" background="primary">

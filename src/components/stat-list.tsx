@@ -71,7 +71,7 @@ export default function StatList(props: Queries.StatListContentFragment) {
                 </li>
               ))}
             </FlexList>
-            <ButtonList links={[link]} reversed />
+            {link && <ButtonList links={[link]} reversed />}
           </Box>
           <Box width="half">
             {props.backgroundImage && (

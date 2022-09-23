@@ -24,6 +24,7 @@ import Fallback from "../components/fallback"
 
 export default function Page({ data }: PageProps<Queries.PageContentQuery>) {
   const { page } = data
+
   return (
     <Layout {...page}>
       {page.blocks.pageComponents.map((block) => {
@@ -32,6 +33,7 @@ export default function Page({ data }: PageProps<Queries.PageContentQuery>) {
           ? "HeroBanner"
           : sectionType.split(" ").join("")
         const Component = sections[blockType] || Fallback
+
         return <Component key={id} {...componentProps} />
       })}
     </Layout>

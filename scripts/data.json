@@ -866,7 +866,7 @@
         "id": "pageSection",
         "type": "ContentType",
         "createdAt": "2022-09-15T19:56:25.671Z",
-        "updatedAt": "2022-09-20T22:30:29.072Z",
+        "updatedAt": "2022-09-23T15:36:43.237Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -874,8 +874,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 3,
-        "publishedAt": "2022-09-20T22:30:29.072Z",
+        "publishedVersion": 7,
+        "publishedAt": "2022-09-23T15:36:43.237Z",
         "firstPublishedAt": "2022-09-15T19:56:29.336Z",
         "createdBy": {
           "sys": {
@@ -891,8 +891,8 @@
             "id": "7LwuIuqlhvfXg42BNyqq31"
           }
         },
-        "publishedCounter": 2,
-        "version": 4,
+        "publishedCounter": 4,
+        "version": 8,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -931,7 +931,8 @@
                 "Testimonial List",
                 "Benefit List",
                 "Stat List",
-                "Product List"
+                "Product List",
+                "Leadership List"
               ]
             }
           ],
@@ -3079,7 +3080,7 @@
             "linkType": "Space"
           }
         },
-        "version": 4,
+        "version": 8,
         "createdAt": "2022-09-15T19:56:29.456Z",
         "createdBy": {
           "sys": {
@@ -3088,7 +3089,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2022-09-20T22:30:29.447Z",
+        "updatedAt": "2022-09-23T15:36:43.712Z",
         "updatedBy": {
           "sys": {
             "id": "7LwuIuqlhvfXg42BNyqq31",
@@ -11127,7 +11128,7 @@
         "id": "4dR9DG0ge0JZnSRbN9cDtJ",
         "type": "Entry",
         "createdAt": "2022-09-15T20:00:29.695Z",
-        "updatedAt": "2022-09-15T20:00:29.695Z",
+        "updatedAt": "2022-09-23T15:37:31.026Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -11135,7 +11136,7 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1,
+        "revision": 2,
         "contentType": {
           "sys": {
             "type": "Link",
@@ -11147,6 +11148,9 @@
       "fields": {
         "internalName": {
           "en-US": "About Section: CTA"
+        },
+        "sectionType": {
+          "en-US": "Cta"
         },
         "kicker": {
           "en-US": "Why ACME is the best"
@@ -12092,7 +12096,7 @@
         "id": "7ph6EnvQclxyDctlB0B6aJ",
         "type": "Entry",
         "createdAt": "2022-09-15T20:00:34.821Z",
-        "updatedAt": "2022-09-15T20:00:34.821Z",
+        "updatedAt": "2022-09-23T16:03:56.197Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -12100,7 +12104,7 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1,
+        "revision": 5,
         "contentType": {
           "sys": {
             "type": "Link",
@@ -12112,6 +12116,12 @@
       "fields": {
         "internalName": {
           "en-US": "About Section: Customer Logos"
+        },
+        "sectionType": {
+          "en-US": "Logo List"
+        },
+        "heading": {
+          "en-US": "100% of the Fortune 100 choose Acme"
         },
         "theme": {
           "en-US": "Primary"
@@ -12378,7 +12388,7 @@
         "id": "oeVXnF3r5CUjectvTKKXN",
         "type": "Entry",
         "createdAt": "2022-09-15T20:00:36.058Z",
-        "updatedAt": "2022-09-15T20:00:36.058Z",
+        "updatedAt": "2022-09-23T15:37:04.800Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -12386,7 +12396,7 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1,
+        "revision": 2,
         "contentType": {
           "sys": {
             "type": "Link",
@@ -12398,6 +12408,9 @@
       "fields": {
         "internalName": {
           "en-US": "About Section: Company Culture Benefits"
+        },
+        "sectionType": {
+          "en-US": "Benefit List"
         },
         "heading": {
           "en-US": "Company culture comes in many shapes and forms, but we particularly pride ourselves on:"
@@ -12866,7 +12879,7 @@
         "id": "7wAjCLGkUOBCFYexjQDqEI",
         "type": "Entry",
         "createdAt": "2022-09-15T20:00:37.929Z",
-        "updatedAt": "2022-09-15T20:00:37.929Z",
+        "updatedAt": "2022-09-23T15:36:52.538Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -12874,7 +12887,7 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1,
+        "revision": 2,
         "contentType": {
           "sys": {
             "type": "Link",
@@ -12886,6 +12899,9 @@
       "fields": {
         "internalName": {
           "en-US": "About Section: Leadership"
+        },
+        "sectionType": {
+          "en-US": "Leadership List"
         },
         "kicker": {
           "en-US": "Why Acme is the best"
@@ -12931,7 +12947,7 @@
         "id": "5yoFDrKkr8BqcuXcYnrtNG",
         "type": "Entry",
         "createdAt": "2022-09-15T20:00:38.151Z",
-        "updatedAt": "2022-09-15T20:00:38.151Z",
+        "updatedAt": "2022-09-23T15:34:37.909Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -12939,7 +12955,7 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1,
+        "revision": 2,
         "contentType": {
           "sys": {
             "type": "Link",
@@ -12951,6 +12967,9 @@
       "fields": {
         "internalName": {
           "en-US": "About Section: Statistics"
+        },
+        "sectionType": {
+          "en-US": "Stat List"
         },
         "theme": {
           "en-US": "Primary"
@@ -13044,7 +13063,7 @@
         "id": "5mAN71LmI24bgHk0mt9ztt",
         "type": "Entry",
         "createdAt": "2022-09-15T20:00:38.605Z",
-        "updatedAt": "2022-09-15T20:00:38.605Z",
+        "updatedAt": "2022-09-23T15:39:59.307Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -13052,7 +13071,7 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1,
+        "revision": 2,
         "contentType": {
           "sys": {
             "type": "Link",
@@ -13100,13 +13119,6 @@
                 "type": "Link",
                 "linkType": "Entry",
                 "id": "oeVXnF3r5CUjectvTKKXN"
-              }
-            },
-            {
-              "sys": {
-                "type": "Link",
-                "linkType": "Entry",
-                "id": "2YtGSsIqLCOcMBOdj3gkq4"
               }
             },
             {
